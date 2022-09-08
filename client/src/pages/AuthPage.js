@@ -7,7 +7,7 @@ export const AuthPage = () => {
   const auth = useContext(AuthContext);
   const message = useMessage();
   const { loading, request, error, clearError } = useHttp();
-  const [form, setForm] = useState({
+  const [form, setForm] = useState({                    // hier ist auch ein Object im useState
     email: "",
     password: "",
   });
@@ -18,7 +18,7 @@ export const AuthPage = () => {
   }, [error, message, clearError]);
 
   useEffect(() => {
-    window.M.updateTextFields(); // метод из materialize.css, позволяющий сделать поля активными, чтобы лэйблы не залезали на поля.
+    window.M.updateTextFields(); // die Methode von materialize css macht die Inputs wieder aktiv
   }, []);
 
   const changeHandler = (event) => {
@@ -45,11 +45,11 @@ export const AuthPage = () => {
         <h1>Сократи Ссылку</h1>
         <div className="card blue darken-1">
           <div className="card-content white-text">
-            <span className="card-title">Авторизация</span>
+            <span className="card-title">Authentication</span>
             <div>
               <div className="input-field">
                 <input
-                  placeholder="Введите email"
+                  placeholder="Enter your email"
                   id="email"
                   type="text"
                   name="email"
@@ -62,7 +62,7 @@ export const AuthPage = () => {
 
               <div className="input-field">
                 <input
-                  placeholder="Введите пароль"
+                  placeholder="Enter your password"
                   id="password"
                   type="password"
                   name="password"
@@ -70,7 +70,7 @@ export const AuthPage = () => {
                   value={form.password}
                   onChange={changeHandler}
                 />
-                <label htmlFor="email">Пароль</label>
+                <label htmlFor="email">Password</label>
               </div>
             </div>
           </div>
@@ -81,14 +81,14 @@ export const AuthPage = () => {
               disabled={loading}
               onClick={loginHandler}
             >
-              Войти
+              LogIn
             </button>
             <button
               className="btn grey lighten-1 black-text"
               onClick={registerHandler}
               disabled={loading}
             >
-              Регистрация
+              Registration
             </button>
           </div>
         </div>

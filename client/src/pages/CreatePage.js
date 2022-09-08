@@ -11,7 +11,7 @@ export const CreatePage = () => {
   const [link, setLink] = useState("");
 
   useEffect(() => {
-    window.M.updateTextFields(); // метод из materialize.css, позволяющий сделать поля активными, чтобы лэйблы не залезали на поля.
+    window.M.updateTextFields(); // aktiviert die Inputs
   }, []);
 
   const pressHandler = async (event) => {
@@ -33,14 +33,14 @@ export const CreatePage = () => {
       <div className="col s8 offset-s2" style={{ paddingTop: "2rem" }}>
         <div className="input-field">
           <input
-            placeholder="Вставьте ссылку"
+            placeholder="Enter your Link"
             id="link"
             type="text"
             value={link}
             onChange={(event) => setLink(event.target.value)}
             onKeyPress={pressHandler}
           />
-          <label htmlFor="link">Сслк</label>
+          <label htmlFor="link">Link</label>
         </div>
       </div>
     </div>
