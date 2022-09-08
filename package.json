@@ -1,9 +1,10 @@
 {
   "name": "mern",
-  "version": "1.0.0",
+  "version": "16.14.0",
   "description": "mern project",
   "main": "app.js",
   "scripts": {
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "start": "cross-env NODE_ENV=production node app.js",
     "server": "nodemon app.js",
     "client": "npm run start --prefix client",
