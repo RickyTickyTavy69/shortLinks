@@ -7,7 +7,7 @@ const router = Router();
 
 router.post("/generate", auth,  async (req, res) => {
   try {
-    const baseUrl = process.env.BASE_URL || config.get("baseUrl");
+    const baseUrl = "https://makeitshort69.herokuapp.com";                                          //config.get("baseUrl");
     const { from } = req.body;
     const code = shortid.generate();
 
